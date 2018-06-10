@@ -42,9 +42,16 @@ public class Bonoloto extends javax.swing.JFrame {
         Numero6 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         Resultado = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BONOLOTO");
+
+        Aleatorio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Aleatorio1ActionPerformed(evt);
+            }
+        });
 
         Aleatorio3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +84,13 @@ public class Bonoloto extends javax.swing.JFrame {
         Resultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ResultadoActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Empezar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -122,7 +136,10 @@ public class Bonoloto extends javax.swing.JFrame {
                         .addGap(69, 69, 69)
                         .addComponent(jLabel2)
                         .addGap(45, 45, 45)
-                        .addComponent(Resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -136,7 +153,9 @@ public class Bonoloto extends javax.swing.JFrame {
                     .addComponent(Aleatorio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Aleatorio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Aleatorio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -173,8 +192,48 @@ public class Bonoloto extends javax.swing.JFrame {
     }//GEN-LAST:event_Numero4ActionPerformed
 
     private void ResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultadoActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_ResultadoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int t=(int) (Math.random() * 48 +1) ;
+         Aleatorio1.setText(""+t);
+         int q=(int) (Math.random() *48 +1) ;
+         Aleatorio2.setText(""+q);
+         int v=(int) (Math.random() * 48 +1) ;
+         Aleatorio3.setText(""+v);
+         int d=(int) (Math.random() * 48 +1) ;
+         Aleatorio4.setText(""+d);
+         int z=(int) (Math.random() * 48 +1) ;
+         Aleatorio5.setText(""+z);
+         int p=(int) (Math.random() * 48 +1) ;
+         Aleatorio6.setText(""+p);
+        
+        int i=0;
+        if(Integer.parseInt(Numero1.getText())==Integer.parseInt(Aleatorio1.getText())){
+            i++;
+        }
+        if(Integer.parseInt(Numero2.getText())==Integer.parseInt(Aleatorio2.getText())){
+            i++;
+        }
+        if(Integer.parseInt(Numero3.getText())==Integer.parseInt(Aleatorio3.getText())){
+            i++;
+        }
+        if(Integer.parseInt(Numero4.getText())==Integer.parseInt(Aleatorio4.getText())){
+            i++;
+        }
+        if(Integer.parseInt(Numero5.getText())==Integer.parseInt(Aleatorio5.getText())){
+            i++;
+        }
+        if(Integer.parseInt(Numero6.getText())==Integer.parseInt(Aleatorio6.getText())){
+            i++;
+        }
+        Resultado.setText(""+i);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void Aleatorio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aleatorio1ActionPerformed
+     
+    }//GEN-LAST:event_Aleatorio1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,6 +284,7 @@ public class Bonoloto extends javax.swing.JFrame {
     private javax.swing.JTextField Numero5;
     private javax.swing.JTextField Numero6;
     private javax.swing.JTextField Resultado;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
